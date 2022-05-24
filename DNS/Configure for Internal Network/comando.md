@@ -31,7 +31,27 @@ options {
 
 ```
 ```
-```
+``` root@dlp:~# vi /etc/bind/named.conf
+
+include "/etc/bind/named.conf.options";
+include "/etc/bind/named.conf.local";
+include "/etc/bind/named.conf.default-zones";
+# add
+include "/etc/bind/named.conf.internal-zones";
+
+root@dlp:~# vi /etc/bind/named.conf.options
+
+# add : set ACL entry for local network
+acl internal-network {
+        10.0.0.0/24;
+};
+
+options {
+        directory "/var/cache/bind";
+
+.....
+.....
+
         # add local network set on [acl] section above
         # network range you allow to recieve queries from hosts
         allow-query { localhost; internal-network; };
@@ -40,16 +60,19 @@ options {
         allow-transfer { localhost; };
         # add : allow recursion
         recursion yes;
-```
+
+        //=======================================================================
+        // If BIND logs error messages about the root key being expired,
+        // you will need to update your keys.  See https://www.isc.org/bind-keys
+        //=======================================================================
+
         dnssec-validation auto;
-```
+
         # if not listen IPV6, change [any] to [none]
         listen-on-v6 { any; };
 };
-```
-```
-root@dlp:~# nano /etc/bind/named.conf.internal-zones
-```
+
+root@dlp:~# vi /etc/bind/named.conf.internal-zones
 # create new
 
 # add zones for your network and domain name
@@ -84,5 +107,7 @@ OPTIONS="-u bind -4
 # network address     ⇒ 192.168.1.0
 # network range       ⇒ 192.168.1.0 - 192.168.1.255
 # how to write        ⇒ 1.168.192.in-addr.arpa
+
+
 
 
