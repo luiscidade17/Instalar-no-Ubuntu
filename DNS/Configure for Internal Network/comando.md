@@ -30,7 +30,6 @@ options {
 .....
 
 ```
-sudo nano /etc/bind/named.conf.options 
 ```
 ```
         # add local network set on [acl] section above
