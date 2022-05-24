@@ -8,7 +8,7 @@ root@dlp:~# apt -y install nfs-kernel-server
 root@dlp:~# vi /etc/idmapd.conf 
 ```
 
-Alterar no ficheiro de COnfiguração:
+Alterar no ficheiro de Configuração:
 ```
  # line 6 : uncomment and change to your domain name
 
