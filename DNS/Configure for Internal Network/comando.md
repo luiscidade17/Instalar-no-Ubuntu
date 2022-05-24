@@ -46,8 +46,10 @@ options {
         # if not listen IPV6, change [any] to [none]
         listen-on-v6 { any; };
 };
-
-root@dlp:~# vi /etc/bind/named.conf.internal-zones
+```
+```
+root@dlp:~# nano /etc/bind/named.conf.internal-zones
+```
 # create new
 
 # add zones for your network and domain name
