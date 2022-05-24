@@ -9,12 +9,14 @@ Instalar Bind9
 ```
 sudo apt -y install bind9 bind9utils 
 ```
- 
+ADICIONAR include "/etc/bind/named.conf.internal-zones";
 ```
 sudo nano /etc/bind/named.conf  
 ```
-ADICIONAR 
-include "/etc/bind/named.conf.internal-zones";
+# add : set ACL entry for local network
+acl internal-network {
+        10.0.0.0/24;
+};
 
 ```
 sudo nano /etc/bind/named.conf.options 
