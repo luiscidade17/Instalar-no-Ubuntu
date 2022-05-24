@@ -31,7 +31,7 @@ options {
 
 ```
 ```
-``` root@dlp:~# vi /etc/bind/named.conf
+root@dlp:~# vi /etc/bind/named.conf
 
 include "/etc/bind/named.conf.options";
 include "/etc/bind/named.conf.local";
