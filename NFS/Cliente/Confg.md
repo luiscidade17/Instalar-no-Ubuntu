@@ -16,9 +16,12 @@ Alterar no ficheiro de Configuração:
 
 Domain = srv.world
 
+
+```
 ```
 root@node01:~# mount -t nfs dlp.srv.world:/home/nfsshare /mnt 
 ```
+
 
 ```
 root@node01:~# df -hT 
