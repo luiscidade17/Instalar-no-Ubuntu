@@ -5,7 +5,9 @@ Configurar Zonas
 
 # Configurar Zonas
 
-
+crie arquivos de zona que os servidores resolvem o endereço IP do nome de domínio.
+O exemplo abaixo usa rede interna [10.0.0.0/24], nome de domínio [srv.world].
+Substitua para o seu próprio ambiente.
 
 ```
 root@dlp:~# vi /etc/bind/srv.world.lan
