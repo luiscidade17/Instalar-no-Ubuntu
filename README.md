@@ -1,1 +1,0 @@
-# Instalar-no-Ubuntu
