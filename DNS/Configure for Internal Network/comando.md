@@ -14,14 +14,16 @@ ADICIONAR include "/etc/bind/named.conf.internal-zones";
 sudo nano /etc/bind/named.conf  
 ```
 # add : set ACL entry for local network
+
+```
+sudo nano /etc/bind/named.conf.options 
+```
+```
 acl internal-network {
         10.0.0.0/24;
 };
 
 ```
-sudo nano /etc/bind/named.conf.options 
-```
-
 Bulk git push operation (some repositries folders)
  
 ```
