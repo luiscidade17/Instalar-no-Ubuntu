@@ -23,14 +23,9 @@ acl internal-network {
         10.0.0.0/24;
 };
 
-```
-Bulk git push operation (some repositries folders)
- 
-```
-bulk-git --status repFolder01 repFolder02 respFolder03 branch 
-```
+options {
+        directory "/var/cache/bind";
 
-Git status of the myrepA and myrepB prj
-```
-bulk-git --status myrepA myrepB main 
-```
+.....
+.....
+
