@@ -40,13 +40,9 @@ options {
         allow-transfer { localhost; };
         # add : allow recursion
         recursion yes;
-  //=======================================================================
-        // If BIND logs error messages about the root key being expired,
-        // you will need to update your keys.  See https://www.isc.org/bind-keys
-        //=======================================================================
-
+```
         dnssec-validation auto;
-
+```
         # if not listen IPV6, change [any] to [none]
         listen-on-v6 { any; };
 };
